@@ -1,16 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../../auth/auth.service';
-
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { ApiService } from './../../api.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  idToken$ = this.auth.idToken$.pipe(catchError(err => throwError(err)));
+  dragons$;
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private api: ApiService, ) { }
+
 
   ngOnInit() {
+
+    this.auth.idToken$.subscribe(idToken => {
+      console.log(idToken);
+      this.dragons$ = this.api.getDragons$(idToken);
+    })
   }
 
   makeProfileArray(obj): string[] {

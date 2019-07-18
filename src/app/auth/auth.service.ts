@@ -21,6 +21,8 @@ export class AuthService {
   private authFlag = 'isLoggedIn';
   // Create stream for token
   token$ = new BehaviorSubject<string>(null);
+  // Create stream for ID token JWT
+  idToken$ = new BehaviorSubject<any>(null);
   // Create stream for user profile data
   userProfile$ = new BehaviorSubject<any>(null);
   // Authentication navigation
@@ -56,6 +58,7 @@ export class AuthService {
     this.token$.next(authResult.accessToken);
     // Emit value for user data subject
     this.userProfile$.next(authResult.idTokenPayload);
+    this.idToken$.next(authResult.idToken);
     // Set flag in local storage stating this app is logged in
     localStorage.setItem(this.authFlag, JSON.stringify(true));
   }

@@ -1,11 +1,13 @@
-<div *ngIf="(auth.userProfile$ | async) as user">
-  <h1>{{ user.name }}</h1>
-  <ul>
-    <li *ngFor="let profileProp of makeProfileArray(user)">
-      <code>{{ profileProp }}</code>
-    </li>
-  </ul>
+
+  <div *ngIf="(dragons$ | async) as dragons">
+      <h2>Here Be Dragons</h2>
+      <ul>
+        <li *ngFor="let dragon of dragons">
+          {{ dragon }} 
+        </li>
+      </ul>
+    </div>
   <p>
     <a routerLink="/" href>Back to Home</a>
   </p>
-</div>
+

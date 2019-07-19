@@ -9,9 +9,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getDragons$(idToken: String): Observable<any[]> {
+  getDragons$(): Observable<any[]> {
     return this.http
-      .get<any[]>(environment.auth.RESTHEART_URL + '/dragons')
+      .get<any[]>(environment.auth.RESTHEART_URL + environment.auth.RESTHEART_COLLECTION)
       .pipe(
         catchError(err => throwError(err))
       );

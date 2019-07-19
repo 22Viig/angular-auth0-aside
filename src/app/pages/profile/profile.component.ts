@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.auth.idToken$.subscribe(idToken => {
-      this.dragons$ = this.api.getDragons$(idToken);
+      this.dragons$ = this.api.getDragons$();
     })
   }
 

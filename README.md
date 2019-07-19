@@ -1,6 +1,6 @@
 # angular-auth0-aside
 
-This repository demonstrates the use of [Auth0](https://auth0.com) with [Angular](https://angular.io) (with the [@angular/cli](https://github.com/angular/angular-cli)) and a sample Node API with a protected route.
+This repository demonstrates the use of [Auth0](https://auth0.com) with [Angular](https://angular.io) (with the [@angular/cli](https://github.com/angular/angular-cli)) and a sample [RESTHeart](http://www.restheart.com) API with a protected route.
 
 ## Dependencies
 
@@ -19,18 +19,13 @@ This repository demonstrates the use of [Auth0](https://auth0.com) with [Angular
 
 ## Auth0 API Setup
 
-1. Go to [**APIs**](https://manage.auth0.com/#/apis) in your Auth0 dashboard and click on the "Create API" button. Enter a name for the API. Set the **Identifier** to your API endpoint URL. In this example, this is `http://localhost:3001/api/`. The **Signing Algorithm** should be `RS256`.
-2. You can consult the Node.js example under the **Quick Start** tab in your new API's settings. We'll implement our Node API in this fashion, using [Express](https://expressjs.com/), [express-jwt](https://github.com/auth0/express-jwt), and [jwks-rsa](https://github.com/auth0/node-jwks-rsa).
-
-We're now ready to implement Auth0 authentication on both our Angular client and Node backend API.
+This app uses RESTHeart API, pls refer to www.restheart.com to know how to launch RESTHeart.
 
 ## Installation
 
 Clone this project. From the root directory, run the following commands to install dependencies for the server and client-side:
 
 ```
-$ npm install
-$ cd server
 $ npm install
 ```
 
@@ -62,15 +57,3 @@ Auth0 helps you to:
 
 1. Go to [Auth0](https://auth0.com) and click Sign Up.
 2. Use Google, GitHub, or Microsoft Account to log in.
-
-## Issue Reporting
-
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
-
-## Author
-
-[Auth0](auth0.com)
-
-## License
-
-This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.

@@ -20,7 +20,7 @@ export class AuthService {
   // Track whether or not to renew token
   private authFlag = 'isLoggedIn';
   // Create stream for token
-  token$ = new BehaviorSubject<string>(null);
+  AccessToken$ = new BehaviorSubject<string>(null);
   // Create stream for ID token JWT
   idToken$ = new BehaviorSubject<any>(null);
   // Create stream for user profile data
@@ -55,7 +55,7 @@ export class AuthService {
 
   private localLogin(authResult) {
     // Observable of token
-    this.token$.next(authResult.accessToken);
+    this.AccessToken$.next(authResult.accessToken);
     // Emit value for user data subject
     this.userProfile$.next(authResult.idTokenPayload);
     this.idToken$.next(authResult.idToken);
@@ -81,7 +81,7 @@ export class AuthService {
 
   private localLogout() {
     localStorage.setItem(this.authFlag, JSON.stringify(false));
-    this.token$.next(null);
+    this.AccessToken$.next(null);
     this.userProfile$.next(null);
   }
 

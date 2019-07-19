@@ -17,7 +17,7 @@ export class InterceptorService implements HttpInterceptor {
     // and do not need Authorization header, implement logic
     // here to accommodate that and conditionally let public
     // requests pass through based on your requirements
-    return this.auth.token$
+    return this.auth.idToken$
       .pipe(
         filter(token => typeof token === 'string'),
         mergeMap(token => {

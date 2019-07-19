@@ -9,13 +9,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getDragons$(token: String): Observable<any[]> {
+  getDragons$(idToken: String): Observable<any[]> {
     return this.http
-      .get<any[]>('http://127.0.0.1:8080/', {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
+      .get<any[]>('http://localhost:8080/dragons')
       .pipe(
         catchError(err => throwError(err))
       );

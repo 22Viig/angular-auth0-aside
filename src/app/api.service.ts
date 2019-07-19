@@ -11,7 +11,7 @@ export class ApiService {
 
   getDragons$(idToken: String): Observable<any[]> {
     return this.http
-      .get<any[]>('http://localhost:8080/dragons')
+      .get<any[]>(environment.auth.RESTHEART_URL + '/dragons')
       .pipe(
         catchError(err => throwError(err))
       );

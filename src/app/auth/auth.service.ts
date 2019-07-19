@@ -7,8 +7,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthService {
   // Create Auth0 web auth instance
-  // @TODO: Update environment variables and remove .example
-  // extension in src/environments/environment.ts.example
+  // extension in src/environments/environment.ts
   private Auth0 = new auth0.WebAuth({
     clientID: environment.auth.CLIENT_ID,
     domain: environment.auth.CLIENT_DOMAIN,

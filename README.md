@@ -17,9 +17,9 @@ This repository demonstrates the use of [Auth0](https://auth0.com) with [Angular
 
 > **Note:** Set up your own social keys and _do not_ leave social connections set to use Auth0 dev keys or you will encounter issues with token renewal.
 
-## Auth0 API Setup
+## RESTHeart API Setup
 
-This app uses RESTHeart API, pls refer to www.restheart.com to know how to launch RESTHeart.
+This app uses RESTHeart API, please refer to www.restheart.com to know how to launch RESTHeart.
 
 ## Installation
 
